@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "public",
+    "site": "refractiontrainer1",
     "ignore": [
       "firebase.json",
       "**/.*",
