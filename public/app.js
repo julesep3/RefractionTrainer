@@ -13,3 +13,7 @@
 // 	console.log('name button is pressed');
 // 	rootTag.innerHTML = 'Name is Blort!';
 // }
+
+import * as FirebaseAuth from './controller/firebase_auth.js'
+
+FirebaseAuth.addEventListeners();
