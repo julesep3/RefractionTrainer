@@ -1,4 +1,4 @@
-import * as Elements from '../model/elements.js'
+import * as Elements from '../view/elements.js'
 
 export function addEventListeners() {
 
