@@ -24,33 +24,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <li class="nav-item preauth">
+            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-signin-form">Sign
+              In</button>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+          <li class="nav-item postauth">
+            <button class="btn btn-outline-success">Home</button>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+          <li class="nav-item postauth">
+            <button class="btn btn-outline-danger">Sign Out</button>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
+
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn btn-outline-primary" type="submit">Search</button>
         </form>
       </div>
     </div>
@@ -58,6 +46,53 @@
 
   <!-- Body of Web Page -->
   <p id="root"></p>
+
+  <!-- Modal: Sign In -->
+  <div class="modal fade" id="modal-signin-form" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="modal-signin-form-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-signin-form-label">Sign In Please</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="post">
+            <div>
+              <input type="email" name="email" placeholder="email address">
+            </div>
+            <div>
+              <input type="password" name="password" placeholder="password">
+            </div>
+            <div>
+              <button class="btn btn-outline-primary" type="submit">Sign In</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyB4t1DCHBPCb-GWk7q6TMtUXg9FVfTzuIk",
+      authDomain: "refractiontrainer.firebaseapp.com",
+      projectId: "refractiontrainer",
+      storageBucket: "refractiontrainer.appspot.com",
+      messagingSenderId: "194798944563",
+      appId: "1:194798944563:web:a4b9e919058fba0e23be46"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
 
   <!-- JavaScript Module Reference for Web Page -->
   <script type="module" src="app.js"></script>

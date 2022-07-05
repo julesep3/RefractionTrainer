@@ -2,3 +2,18 @@
 .page-banner {
 	height: 10px;
 }
+
+/* Navigation Bar Buttons */
+li.nav-item {
+	padding-right: 10px;
+}
+
+/* Modal PREAUTH */
+.preauth {
+	display: block;
+}
+
+/* Modal POSTAUTH */
+.postauth {
+	display: none;
+}
