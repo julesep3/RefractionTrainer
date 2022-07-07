@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js";
 
 import * as Elements from '../view/elements.js'
 
@@ -20,6 +20,15 @@ export function addEventListeners() {
 			const errorCode = error.code;
 			const errorMessage = error.message;
 			console.log(`Sign-In Error: ${errorCode} : ${errorMessage}`);
+		}
+	});
+
+	Elements.navbarSignOut.addEventListener('click', async () => {
+		try {
+			await signOut(auth);
+			console.log(`Sign-Out Success!`);
+		} catch (e) {
+			console.log(`Sign-Out Error: e`);
 		}
 	});
 
