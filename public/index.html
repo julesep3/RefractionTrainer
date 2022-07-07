@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Refraction Trainer</title>
+  <!-- Favicon Tab Image -->
+  <link rel="icon" href="image/eyeball.png">
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <!-- Link to CSS stylesheet -->
@@ -32,9 +35,11 @@
             <button class="btn btn-outline-success">Home</button>
           </li>
           <li class="nav-item postauth">
+            <button class="btn btn-outline-success">About</button>
+          </li>
+          <li class="nav-item postauth">
             <button class="btn btn-outline-danger">Sign Out</button>
           </li>
-
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -44,7 +49,7 @@
     </div>
   </nav>
 
-  <!-- Body of Web Page -->
+  <!-- Body of Web Page (below Nav Bar) -->
   <p id="root"></p>
 
   <!-- Modal: Sign In -->
@@ -73,7 +78,7 @@
     </div>
   </div>
 
-  <!-- Firebase -->
+  <!-- Firebase Module Import -->
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
