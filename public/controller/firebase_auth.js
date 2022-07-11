@@ -1,10 +1,11 @@
-import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js";
 
 import * as Elements from '../view/elements.js'
 import * as Utilities from '../view/utilities.js'
 import * as Constants from '../model/constants.js'
 
 const auth = getAuth();
+export let currentUser = null;
 
 export function addEventListeners() {
 
@@ -15,11 +16,10 @@ export function addEventListeners() {
 
 		try {
 			const userCredential = await signInWithEmailAndPassword(auth, email, password);
-			const user = userCredential.user;
-			Utilities.info('Successfully Signed In', 'Welcome to Refraction Trainer', Elements.modalSignIn);
+			Elements.modalSignIn.hide();
 			if (Constants.DEV) {
-				console.log(`Sign-In Success: ${user.email} is signed in.`);
-				console.log(`${user.email} User Object Info: ${JSON.stringify(user)}`);
+				// console.log(`Sign-In Success: ${user.email} is signed in.`);
+				// console.log(`${user.email} User Object Info: ${JSON.stringify(user)}`);
 			}
 		} catch (e) {
 			const errorCode = e.code;
@@ -45,5 +45,20 @@ export function addEventListeners() {
 			}
 		}
 	});
+
+	onAuthStateChanged(auth, authStateChangeObserver);
+
+}
+
+function authStateChangeObserver(user) {
+	if (user) {
+		// if user is signed in...
+		currentUser = user;
+		console.log('state logged in');
+	} else {
+		// if user is signed out...
+		currentUser = null;
+		console.log('state logged out');
+	}
 
 }
