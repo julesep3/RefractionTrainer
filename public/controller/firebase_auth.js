@@ -40,8 +40,9 @@ export function addEventListeners() {
 			}
 
 		} catch (e) {
+			Utilities.info('Sign-Out Error', JSON.stringify(e));
 			if (Constants.DEV) {
-				console.log(`Sign-Out Error: e`);
+				console.log(`Sign-Out Error: ${e}`);
 			}
 		}
 	});
