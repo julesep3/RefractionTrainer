@@ -16,10 +16,10 @@ export function addEventListeners() {
 
 		try {
 			const userCredential = await signInWithEmailAndPassword(auth, email, password);
-			Elements.modalSignIn.hide();
+			Utilities.info('Successfully Signed In', 'Welcome to Refraction Trainer', Elements.modalSignIn);
 			if (Constants.DEV) {
-				// console.log(`Sign-In Success: ${user.email} is signed in.`);
-				// console.log(`${user.email} User Object Info: ${JSON.stringify(user)}`);
+				console.log(`Sign-In Success: ${userCredential.user.email} is signed in.`);
+				console.log(`${userCredential.user.email} User Object Info: ${JSON.stringify(userCredential.user)}`);
 			}
 		} catch (e) {
 			const errorCode = e.code;
