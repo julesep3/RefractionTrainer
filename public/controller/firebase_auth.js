@@ -16,7 +16,7 @@ export function addEventListeners() {
 
 		try {
 			const userCredential = await signInWithEmailAndPassword(auth, email, password);
-			Utilities.info('Successfully Signed In', 'Welcome to Refraction Trainer', Elements.modalSignIn);
+			Utilities.info('Successfully Signed In', 'Welcome to Refraction Trainer.', Elements.modalSignIn);
 			if (Constants.DEV) {
 				console.log(`Sign-In Success: ${userCredential.user.email} is signed in.`);
 				console.log(`${userCredential.user.email} User Object Info: ${JSON.stringify(userCredential.user)}`);
@@ -34,7 +34,7 @@ export function addEventListeners() {
 	Elements.navbarSignOut.addEventListener('click', async () => {
 		try {
 			await signOut(auth);
-			Utilities.info('Successfully Signed Out', 'Thank you for using Refraction Trainer');
+			Utilities.info('Successfully Signed Out', 'Thank you for using Refraction Trainer.');
 			if (Constants.DEV) {
 				console.log(`Sign-Out Success!`);
 			}
