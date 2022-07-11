@@ -55,11 +55,27 @@ function authStateChangeObserver(user) {
 	if (user) {
 		// if user is signed in...
 		currentUser = user;
-		console.log('state logged in');
+
+		let elements = document.getElementsByClassName('preauth');
+		for (let i = 0; i < elements.length; i++) {
+			elements[i].style.display = 'none';
+		}
+		elements = document.getElementsByClassName('postauth');
+		for (let i = 0; i < elements.length; i++) {
+			elements[i].style.display = 'block';
+		}
 	} else {
 		// if user is signed out...
 		currentUser = null;
-		console.log('state logged out');
+
+		let elements = document.getElementsByClassName('preauth');
+		for (let i = 0; i < elements.length; i++) {
+			elements[i].style.display = 'block';
+		}
+		elements = document.getElementsByClassName('postauth');
+		for (let i = 0; i < elements.length; i++) {
+			elements[i].style.display = 'none';
+		}
 	}
 
 }

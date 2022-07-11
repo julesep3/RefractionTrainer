@@ -1,3 +1,6 @@
+// main root
+export const root = document.getElementById('root');
+
 // forms
 export const formSignIn = document.getElementById('form-signin');
 
