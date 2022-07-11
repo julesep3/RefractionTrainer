@@ -10,3 +10,5 @@ export const modalInfoBox = {
 	title: document.getElementById('modal-infobox-title'),
 	body: document.getElementById('modal-infobox-body'),
 }
+
+export const modalSignIn = new bootstrap.Modal(document.getElementById('modal-signin-form'), { backdrop: 'static' });
