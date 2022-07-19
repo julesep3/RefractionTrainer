@@ -12,7 +12,7 @@ export const routes = [
 ];
 
 export function route(pathname, hash) {
-	// within 'routes', find the object where the object's path matches the pathname
+	// within 'routes', find the object where the object's path matches the 'pathname'
 	const route = routes.find(element => element.path == pathname);
 	// if the route exists, call on that page's function
 	if (route) route.page();
