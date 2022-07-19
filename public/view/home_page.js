@@ -2,7 +2,7 @@ import * as Elements from './elements.js'
 
 export function addEventListeners() {
 
-	Elements.menuHome.addEventListener('click', () => {
+	Elements.navbarHomeButton.addEventListener('click', () => {
 		home_page();
 	})
 

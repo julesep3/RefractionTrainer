@@ -31,7 +31,7 @@ export function addEventListeners() {
 		}
 	});
 
-	Elements.navbarSignOut.addEventListener('click', async () => {
+	Elements.navbarSignOutButton.addEventListener('click', async () => {
 		try {
 			await signOut(auth);
 			Utilities.info('Successfully Signed Out', 'Thank you for using Refraction Trainer.');
