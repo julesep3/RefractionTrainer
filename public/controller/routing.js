@@ -1,4 +1,4 @@
-import { home_page } from "../view/home_page.js;";
+import { home_page } from "../view/home_page.js";
 import { about_page } from "../view/about_page.js";
 
 export const routePath = {
