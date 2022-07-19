@@ -6,6 +6,8 @@ export const formSignIn = document.getElementById('form-signin');
 
 // buttons
 export const navbarSignOut = document.getElementById('navbar-signout');
+export const menuHome = document.getElementById('menu-home');
+export const menuAbout = document.getElementById('menu-about');
 
 // modals
 export const modalInfoBox = {
